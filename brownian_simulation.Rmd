@@ -1,0 +1,52 @@
+---
+title: "Untitled"
+author: "Aime Muganga"
+date: "2025-03-25"
+output: html_document
+---
+```{r}
+library(tidyverse)
+# Set parameters
+T <- 1
+n <- 1000
+dt <- T/n
+t <- seq(0, T, length.out = n+1)
+
+# Generate Brownian motion increments
+Bt_In <- rnorm(n, mean = 0, sd = sqrt(dt))
+
+# Compute Brownian motion path
+B_t <- c(0, cumsum(Bt_In))
+
+# Plot the Brownian motion
+plot(t, B_t, type = "l", col = "blue", lwd = 2, 
+     xlab = "Time", ylab = "B(t)", 
+     main = "Brownian Motion Simulation")
+grid()
+
+
+```
+
+```{r}
+# Set parameters
+T <- 1
+n <- 1000
+dt <- T/n
+t <- seq(0, T, length.out = n+1)
+
+# Simulate Brownian motion
+set.seed(123)  # For reproducibility
+W <- c(0, cumsum(rnorm(n, mean = 0, sd = sqrt(dt))))
+
+# Plot the Brownian motion
+plot(t, W, type = "l", col = "blue", lwd = 2, 
+     xlab = "Time", ylab = "W(t)", 
+     main = "Brownian Motion Simulation")
+grid()
+
+```
+```{r}
+SHT <- function(a,b,n,dt=0.01)
+  tao=min(a,b:W)
+```
+
